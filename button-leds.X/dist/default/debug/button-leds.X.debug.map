@@ -1,16 +1,16 @@
 MPLINK 5.09, LINKER
-Linker Map File - Created Sat Sep 21 18:52:26 2019
+Linker Map File - Created Sat Sep 21 18:52:34 2019
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
                  RES_VECT       code   0x000000    program   0x000020
                    .cinit    romdata   0x000010    program   0x000004
-.config_8007_BUILD/DEFAULT/PRODUCTION/BUTTON-       code   0x008007    program   0x000002
-.config_8008_BUILD/DEFAULT/PRODUCTION/BUTTON-       code   0x008008    program   0x000002
-.config_8009_BUILD/DEFAULT/PRODUCTION/BUTTON-       code   0x008009    program   0x000002
-.config_800A_BUILD/DEFAULT/PRODUCTION/BUTTON-       code   0x00800a    program   0x000002
-.config_800B_BUILD/DEFAULT/PRODUCTION/BUTTON-       code   0x00800b    program   0x000002
+.config_8007_BUILD/DEFAULT/DEBUG/BUTTON-LEDS.       code   0x008007    program   0x000002
+.config_8008_BUILD/DEFAULT/DEBUG/BUTTON-LEDS.       code   0x008008    program   0x000002
+.config_8009_BUILD/DEFAULT/DEBUG/BUTTON-LEDS.       code   0x008009    program   0x000002
+.config_800A_BUILD/DEFAULT/DEBUG/BUTTON-LEDS.       code   0x00800a    program   0x000002
+.config_800B_BUILD/DEFAULT/DEBUG/BUTTON-LEDS.       code   0x00800b    program   0x000002
 
 
 

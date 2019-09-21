@@ -30,7 +30,7 @@ RES_VECT  CODE    0x0000            ; processor reset vector
     CLRF TRISA	    ; all pins of port A to output
     BSF TRISA, 5    ; sixs pin of port A (0-7) to input
     
-START
+START:
     BANKSEL LATA
     CLRF LATA	    ; clearing the output of port A
     BANKSEL PORTA
