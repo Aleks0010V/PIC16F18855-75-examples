@@ -1,0 +1,82 @@
+; This program increments TMR0 after each time the button was pressed.
+; Button connected to TMR0 source
+; The value of TMR0 turns ON LEDs like a binary counter
+;
+; PIC16F18855 Configuration Bit Settings
+
+; Assembly source line config statements
+
+#include "p16f18855.inc"
+
+; CONFIG1
+; __config 0x3FFF
+ __CONFIG _CONFIG1, _FEXTOSC_ECH & _RSTOSC_EXT1X & _CLKOUTEN_OFF & _CSWEN_ON & _FCMEN_ON
+; CONFIG2
+; __config 0x3FFF
+ __CONFIG _CONFIG2, _MCLRE_ON & _PWRTE_OFF & _LPBOREN_OFF & _BOREN_ON & _BORV_LO & _ZCD_OFF & _PPS1WAY_ON & _STVREN_ON
+; CONFIG3
+; __config 0x3F9F
+ __CONFIG _CONFIG3, _WDTCPS_WDTCPS_31 & _WDTE_OFF & _WDTCWS_WDTCWS_7 & _WDTCCS_SC
+; CONFIG4
+; __config 0x3FFF
+ __CONFIG _CONFIG4, _WRT_OFF & _SCANE_available & _LVP_ON
+; CONFIG5
+; __config 0x3FFF
+ __CONFIG _CONFIG5, _CP_OFF & _CPD_OFF
+
+
+; 
+ RES_VECT CODE 0x0000
+    BANKSEL ANSELA
+    CLRF ANSELA
+    BANKSEL TRISA
+    MOVLW 0x20
+    MOVWF TRISA
+    BANKSEL LATA
+    CLRF LATA
+    
+    BANKSEL T0CON0
+    MOVLW 0x80
+    MOVWF T0CON0
+    BANKSEL T0CON1
+    MOVLW 0x10
+    MOVWF T0CON1
+    
+    BANKSEL T0CKIPPS
+    MOVLW B'00000101'
+    MOVWF T0CKIPPS
+    
+    BANKSEL TMR0
+    CLRF TMR0
+;
+
+START:
+    BANKSEL TMR0
+    MOVFW TMR0
+    CALL TABLE
+    BANKSEL LATA
+    MOVWF LATA
+    BANKSEL TMR0
+    BTFSC TMR0, 4
+    CLRF TMR0
+    GOTO START
+;
+TABLE:
+    ADDWF PCL
+    RETLW B'00000000'
+    RETLW B'00001000'
+    RETLW B'00000100'
+    RETLW B'00001100'
+    RETLW B'00000010'
+    RETLW B'00001010'
+    RETLW B'00000110'
+    RETLW B'00001110'
+    RETLW B'00000001'
+    RETLW B'00001001'
+    RETLW B'00000101'
+    RETLW B'00001101'
+    RETLW B'00000011'
+    RETLW B'00001011'
+    RETLW B'00000111'
+    RETLW B'00001111'
+    END
