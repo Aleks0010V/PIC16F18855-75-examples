@@ -1,1 +1,1 @@
-PIC16F18855 Vealuation Board examples
+PIC16F18855/75 examples
