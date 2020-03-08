@@ -1,6 +1,6 @@
 /*
  * File:   temp.c
- * Author: aleks
+ * Author: Aleksandr Valentirov
  *
  * Created on March 5, 2020, 10:07 PM
  */

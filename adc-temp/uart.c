@@ -1,6 +1,6 @@
 /*
  * File:   uart.c
- * Author: aleksandr
+ * Author: Aleksandr Valentirov
  *
  * Created on October 17, 2019, 10:26 AM
  */

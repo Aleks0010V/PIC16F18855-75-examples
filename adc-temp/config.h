@@ -1,6 +1,6 @@
 /* 
  * File:   config.h
- * Author: aleks
+ * Author: Aleksandr Valentirov
  *
  * Created on January 25, 2020, 11:10 PM
  */

@@ -1,6 +1,6 @@
 /*
  * File:   main.c
- * Author: Aleks
+ * Author: Aleksandr Valentirov
  *
  * Created on May 30, 2019, 8:10 AM
  */
