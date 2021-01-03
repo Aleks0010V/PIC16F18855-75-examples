@@ -16,7 +16,7 @@ void uart_send_byte(void* num)
   for(size_t size = sizeof(*num); size > 0; size--)
   {
     while(TRMT == 0){}
-    &TXREG = ptr++;
+    TXREG = *ptr++;
   }
   return;
 }
