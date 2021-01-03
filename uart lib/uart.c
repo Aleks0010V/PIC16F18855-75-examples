@@ -4,7 +4,6 @@
  *
  * Created on October 17, 2019, 10:26 AM
  */
-#include <string.h>
 #include <xc.h>
 
 /*
@@ -17,7 +16,7 @@ void uart_send_byte(void* num)
   for(size_t size = sizeof(*num); size > 0; size--)
   {
     while(TRMT == 0){}
-    memcpy(&TXREG, ptr++, 1);
+    &TXREG = ptr++;
   }
   return;
 }
